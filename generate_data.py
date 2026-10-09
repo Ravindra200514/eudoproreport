@@ -80,7 +80,7 @@ def generate_users(n: int) -> pd.DataFrame:
         })
     df = pd.DataFrame(records)
     df.to_csv(f"{OUTPUT_DIR}/users.csv", index=False)
-    print(f"✅  Users generated     → {OUTPUT_DIR}/users.csv  ({len(df):,} rows)")
+    print(f"[OK] Users generated     -> {OUTPUT_DIR}/users.csv  ({len(df):,} rows)")
     return df
 
 
@@ -113,7 +113,7 @@ def generate_courses(n: int) -> pd.DataFrame:
         })
     df = pd.DataFrame(records)
     df.to_csv(f"{OUTPUT_DIR}/courses.csv", index=False)
-    print(f"✅  Courses generated    → {OUTPUT_DIR}/courses.csv  ({len(df):,} rows)")
+    print(f"[OK] Courses generated    -> {OUTPUT_DIR}/courses.csv  ({len(df):,} rows)")
     return df
 
 
@@ -165,14 +165,14 @@ def generate_transactions(users: pd.DataFrame, courses: pd.DataFrame, n: int) ->
 
     df = pd.DataFrame(records)
     df.to_csv(f"{OUTPUT_DIR}/transactions.csv", index=False)
-    print(f"✅  Transactions generated → {OUTPUT_DIR}/transactions.csv  ({len(df):,} rows)")
+    print(f"[OK] Transactions generated -> {OUTPUT_DIR}/transactions.csv  ({len(df):,} rows)")
     return df
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
 if __name__ == "__main__":
-    print("\n🚀  EduPro Data Generator\n" + "─" * 40)
+    print("\nEduPro Data Generator\n" + "-" * 40)
     users        = generate_users(N_USERS)
     courses      = generate_courses(N_COURSES)
     transactions = generate_transactions(users, courses, N_TRANSACTIONS)
-    print("\n✨  All datasets ready in ./data/")
+    print("\n[DONE] All datasets ready in ./data/")
